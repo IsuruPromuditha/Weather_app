@@ -6,7 +6,7 @@ export const StateContextProvider = ({Children}) => {
     const [weather , setWeather ] = useState({})
     const [values , setValues] = useState([])
     const [place , setPlace] = useState('Jaipur')
-    const [location , setLocation] = useState('')
+    const [thisLocation , setLocation] = useState('')
 
     //fetch api
     const fetchWeather = async() => {
@@ -42,7 +42,7 @@ export const StateContextProvider = ({Children}) => {
     }
 
     useEffect(() => {
-       // fetchWeather()
+        fetchWeather()
 
     }, [place])
 
@@ -56,7 +56,7 @@ export const StateContextProvider = ({Children}) => {
             weather,
             setPlace,
             values,
-            location
+            thisLocation
         }}>
         {Children}
         

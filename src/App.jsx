@@ -2,11 +2,15 @@ import { useState } from 'react'
 
 import './App.css'
 import search from './assets/icons/search.svg'
+import { useStateContext } from './Contex'
 
 
 function App() {
 
   const [input ,setInput] = useState('')
+
+  const {weather} = useStateContext()
+  console.log(weather)
   
 
   return (
